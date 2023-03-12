@@ -16,12 +16,21 @@
 
 @implementation OpcodeTests
 
-- (void)test_NOP {
+-(void)test_NOP {
     Gameboy gameboy;
     std::array<Byte, 1> program = { 0x00 };
     gameboy.memory.load_rom(program);
     gameboy.run(1);
     XCTAssertEqual(gameboy.cpu.cycle, 1);
+}
+
+-(void)test_LD_C_n {
+    Gameboy gameboy;
+    std::array<Byte, 2> program = { 0x0E, 0xAB };
+    gameboy.memory.load_rom(program);
+    gameboy.run(2);
+    XCTAssertEqual(gameboy.cpu.register_C, 0xAB);
+    XCTAssertEqual(gameboy.cpu.cycle, 2);
 }
 
 -(void)test_LD_SP_HL {
