@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0DCB583A29BBB91000CA7353"
-               BuildableName = "gameboy-cpu.app"
-               BlueprintName = "gameboy-cpu"
-               ReferencedContainer = "container:gameboy-cpu.xcodeproj">
+               BuildableName = "gabboy.app"
+               BlueprintName = "gabboy"
+               ReferencedContainer = "container:gabboy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0DCB584B29BBB91100CA7353"
-               BuildableName = "gameboy-cpuTests.xctest"
-               BlueprintName = "gameboy-cpuTests"
-               ReferencedContainer = "container:gameboy-cpu.xcodeproj">
+               BuildableName = "gabboyTests.xctest"
+               BlueprintName = "gabboyTests"
+               ReferencedContainer = "container:gabboy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DCB583A29BBB91000CA7353"
-            BuildableName = "gameboy-cpu.app"
-            BlueprintName = "gameboy-cpu"
-            ReferencedContainer = "container:gameboy-cpu.xcodeproj">
+            BuildableName = "gabboy.app"
+            BlueprintName = "gabboy"
+            ReferencedContainer = "container:gabboy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,9 +73,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DCB583A29BBB91000CA7353"
-            BuildableName = "gameboy-cpu.app"
-            BlueprintName = "gameboy-cpu"
-            ReferencedContainer = "container:gameboy-cpu.xcodeproj">
+            BuildableName = "gabboy.app"
+            BlueprintName = "gabboy"
+            ReferencedContainer = "container:gabboy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

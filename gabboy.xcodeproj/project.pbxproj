@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DCB583F29BBB91000CA7353 /* gameboy_cpuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB583E29BBB91000CA7353 /* gameboy_cpuApp.swift */; };
+		0DCB583F29BBB91000CA7353 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB583E29BBB91000CA7353 /* App.swift */; };
 		0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB584029BBB91000CA7353 /* ContentView.swift */; };
 		0DCB584329BBB91100CA7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584229BBB91100CA7353 /* Assets.xcassets */; };
 		0DCB584729BBB91100CA7353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */; };
@@ -35,14 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0DCB583B29BBB91000CA7353 /* gameboy-cpu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gameboy-cpu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB583E29BBB91000CA7353 /* gameboy_cpuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameboy_cpuApp.swift; sourceTree = "<group>"; };
+		0DCB583B29BBB91000CA7353 /* gabboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gabboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCB583E29BBB91000CA7353 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		0DCB584029BBB91000CA7353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0DCB584229BBB91100CA7353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0DCB584429BBB91100CA7353 /* gameboy_cpu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gameboy_cpu.entitlements; sourceTree = "<group>"; };
+		0DCB584429BBB91100CA7353 /* gabboy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gabboy.entitlements; sourceTree = "<group>"; };
 		0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0DCB584C29BBB91100CA7353 /* gameboy-cpuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gameboy-cpuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB585629BBB91100CA7353 /* gameboy-cpuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gameboy-cpuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCB586A29BBB9AE00CA7353 /* gameboy-cpu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameboy-cpu-Bridging-Header.h"; sourceTree = "<group>"; };
 		0DCB586B29BBB9AE00CA7353 /* Memory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		0DCB586C29BBB9AE00CA7353 /* Memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Memory.hpp; sourceTree = "<group>"; };
@@ -81,8 +81,8 @@
 		0DCB583229BBB91000CA7353 = {
 			isa = PBXGroup;
 			children = (
-				0DCB583D29BBB91000CA7353 /* gameboy-cpu */,
-				0DCB584F29BBB91100CA7353 /* gameboy-cpuTests */,
+				0DCB583D29BBB91000CA7353 /* src */,
+				0DCB584F29BBB91100CA7353 /* test */,
 				0DCB583C29BBB91000CA7353 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,24 +90,24 @@
 		0DCB583C29BBB91000CA7353 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0DCB583B29BBB91000CA7353 /* gameboy-cpu.app */,
-				0DCB584C29BBB91100CA7353 /* gameboy-cpuTests.xctest */,
-				0DCB585629BBB91100CA7353 /* gameboy-cpuUITests.xctest */,
+				0DCB583B29BBB91000CA7353 /* gabboy.app */,
+				0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */,
+				0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0DCB583D29BBB91000CA7353 /* gameboy-cpu */ = {
+		0DCB583D29BBB91000CA7353 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				0DCB586929BBB94A00CA7353 /* CPP */,
-				0DCB583E29BBB91000CA7353 /* gameboy_cpuApp.swift */,
+				0DCB586929BBB94A00CA7353 /* cpp */,
+				0DCB583E29BBB91000CA7353 /* App.swift */,
 				0DCB584029BBB91000CA7353 /* ContentView.swift */,
 				0DCB584229BBB91100CA7353 /* Assets.xcassets */,
-				0DCB584429BBB91100CA7353 /* gameboy_cpu.entitlements */,
+				0DCB584429BBB91100CA7353 /* gabboy.entitlements */,
 				0DCB584529BBB91100CA7353 /* Preview Content */,
 			);
-			path = "gameboy-cpu";
+			path = src;
 			sourceTree = "<group>";
 		};
 		0DCB584529BBB91100CA7353 /* Preview Content */ = {
@@ -118,15 +118,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0DCB584F29BBB91100CA7353 /* gameboy-cpuTests */ = {
+		0DCB584F29BBB91100CA7353 /* test */ = {
 			isa = PBXGroup;
 			children = (
 				0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */,
 			);
-			path = "gameboy-cpuTests";
+			path = test;
 			sourceTree = "<group>";
 		};
-		0DCB586929BBB94A00CA7353 /* CPP */ = {
+		0DCB586929BBB94A00CA7353 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
 				0DCB586B29BBB9AE00CA7353 /* Memory.cpp */,
@@ -137,15 +137,15 @@
 				0DCB587D29BBE09700CA7353 /* CPU.cpp */,
 				0DCB587E29BBE09700CA7353 /* CPU.hpp */,
 			);
-			path = CPP;
+			path = cpp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0DCB583A29BBB91000CA7353 /* gameboy-cpu */ = {
+		0DCB583A29BBB91000CA7353 /* gabboy */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DCB586029BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpu" */;
+			buildConfigurationList = 0DCB586029BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboy" */;
 			buildPhases = (
 				0DCB583729BBB91000CA7353 /* Sources */,
 				0DCB583829BBB91000CA7353 /* Frameworks */,
@@ -155,14 +155,14 @@
 			);
 			dependencies = (
 			);
-			name = "gameboy-cpu";
+			name = gabboy;
 			productName = "gameboy-cpu";
-			productReference = 0DCB583B29BBB91000CA7353 /* gameboy-cpu.app */;
+			productReference = 0DCB583B29BBB91000CA7353 /* gabboy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0DCB584B29BBB91100CA7353 /* gameboy-cpuTests */ = {
+		0DCB584B29BBB91100CA7353 /* gabboyTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DCB586329BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpuTests" */;
+			buildConfigurationList = 0DCB586329BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyTests" */;
 			buildPhases = (
 				0DCB584829BBB91100CA7353 /* Sources */,
 				0DCB584929BBB91100CA7353 /* Frameworks */,
@@ -173,14 +173,14 @@
 			dependencies = (
 				0DCB584E29BBB91100CA7353 /* PBXTargetDependency */,
 			);
-			name = "gameboy-cpuTests";
+			name = gabboyTests;
 			productName = "gameboy-cpuTests";
-			productReference = 0DCB584C29BBB91100CA7353 /* gameboy-cpuTests.xctest */;
+			productReference = 0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0DCB585529BBB91100CA7353 /* gameboy-cpuUITests */ = {
+		0DCB585529BBB91100CA7353 /* gabboyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpuUITests" */;
+			buildConfigurationList = 0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyUITests" */;
 			buildPhases = (
 				0DCB585229BBB91100CA7353 /* Sources */,
 				0DCB585329BBB91100CA7353 /* Frameworks */,
@@ -191,9 +191,9 @@
 			dependencies = (
 				0DCB585829BBB91100CA7353 /* PBXTargetDependency */,
 			);
-			name = "gameboy-cpuUITests";
+			name = gabboyUITests;
 			productName = "gameboy-cpuUITests";
-			productReference = 0DCB585629BBB91100CA7353 /* gameboy-cpuUITests.xctest */;
+			productReference = 0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +221,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0DCB583629BBB91000CA7353 /* Build configuration list for PBXProject "gameboy-cpu" */;
+			buildConfigurationList = 0DCB583629BBB91000CA7353 /* Build configuration list for PBXProject "gabboy" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -234,9 +234,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0DCB583A29BBB91000CA7353 /* gameboy-cpu */,
-				0DCB584B29BBB91100CA7353 /* gameboy-cpuTests */,
-				0DCB585529BBB91100CA7353 /* gameboy-cpuUITests */,
+				0DCB583A29BBB91000CA7353 /* gabboy */,
+				0DCB584B29BBB91100CA7353 /* gabboyTests */,
+				0DCB585529BBB91100CA7353 /* gabboyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +276,7 @@
 				0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */,
 				0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */,
 				0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */,
-				0DCB583F29BBB91000CA7353 /* gameboy_cpuApp.swift in Sources */,
+				0DCB583F29BBB91000CA7353 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,12 +300,12 @@
 /* Begin PBXTargetDependency section */
 		0DCB584E29BBB91100CA7353 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DCB583A29BBB91000CA7353 /* gameboy-cpu */;
+			target = 0DCB583A29BBB91000CA7353 /* gabboy */;
 			targetProxy = 0DCB584D29BBB91100CA7353 /* PBXContainerItemProxy */;
 		};
 		0DCB585829BBB91100CA7353 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0DCB583A29BBB91000CA7353 /* gameboy-cpu */;
+			target = 0DCB583A29BBB91000CA7353 /* gabboy */;
 			targetProxy = 0DCB585729BBB91100CA7353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -426,10 +426,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "gameboy-cpu/gameboy_cpu.entitlements";
+				CODE_SIGN_ENTITLEMENTS = src/gabboy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"gameboy-cpu/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"src/Preview Content\"";
 				DEVELOPMENT_TEAM = VQ5V23TK4V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -449,12 +449,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpu";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriellumbi.gabboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpu/CPP/gameboy-cpu-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,10 +466,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "gameboy-cpu/gameboy_cpu.entitlements";
+				CODE_SIGN_ENTITLEMENTS = src/gabboy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"gameboy-cpu/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"src/Preview Content\"";
 				DEVELOPMENT_TEAM = VQ5V23TK4V;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -490,12 +489,11 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpu";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gabriellumbi.gabboy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpu/CPP/gameboy-cpu-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -519,16 +517,15 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gabboy-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpuTests/gameboy-cpuTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gameboy-cpu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gameboy-cpu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gabboy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gabboy";
 			};
 			name = Debug;
 		};
@@ -550,15 +547,14 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gabboy-tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpuTests/gameboy-cpuTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gameboy-cpu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gameboy-cpu";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gabboy.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gabboy";
 			};
 			name = Release;
 		};
@@ -609,7 +605,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0DCB583629BBB91000CA7353 /* Build configuration list for PBXProject "gameboy-cpu" */ = {
+		0DCB583629BBB91000CA7353 /* Build configuration list for PBXProject "gabboy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DCB585E29BBB91100CA7353 /* Debug */,
@@ -618,7 +614,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DCB586029BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpu" */ = {
+		0DCB586029BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DCB586129BBB91100CA7353 /* Debug */,
@@ -627,7 +623,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DCB586329BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpuTests" */ = {
+		0DCB586329BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DCB586429BBB91100CA7353 /* Debug */,
@@ -636,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gameboy-cpuUITests" */ = {
+		0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0DCB586729BBB91100CA7353 /* Debug */,
