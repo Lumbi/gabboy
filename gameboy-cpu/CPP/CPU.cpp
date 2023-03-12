@@ -63,6 +63,7 @@ void CPU::execute(Memory& memory) {
         case 0x32: { // LD (HL-), A
             write(memory, register_HL(), register_A);
             set_register_HL(register_HL()-1);
+            break;
         }
 
         case 0xCB: { // CB-prefixed instructions
