@@ -34,6 +34,15 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xAF: { // XOR A
+            register_A = 0x00;
+            flag_Z = 1;
+            flag_N = 0;
+            flag_H = 0;
+            flag_C = 0;
+            break;
+        }
+
         case 0xF9: { // LD SP, (HL)
             stack_pointer = register_HL();
             cycle++;
@@ -60,15 +69,6 @@ void CPU::execute(Memory& memory) {
             Memory::Address write_location = word(nn_lsb, nn_msb);
             write(memory, write_location, lsb(stack_pointer));
             write(memory, write_location + 1, msb(stack_pointer));
-            break;
-        }
-
-        case 0xAF: { // XOR A
-            register_A = 0x00;
-            flag_Z = 1;
-            flag_N = 0;
-            flag_H = 0;
-            flag_C = 0;
             break;
         }
 
