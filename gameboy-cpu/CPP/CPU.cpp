@@ -65,6 +65,18 @@ void CPU::execute(Memory& memory) {
             set_register_HL(register_HL()-1);
         }
 
+        case 0xCB: { // CB-prefixed instructions
+            fetch(memory);
+            switch (opcode) {
+                case 0x7C: { // BIT 7, H
+                    flag_Z = (register_H & (1 << 7)) == 0;
+                    flag_N = 0;
+                    flag_H = 1;
+                    break;
+                }
+            }
+        }
+
         default:
             break;
     }
