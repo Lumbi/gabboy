@@ -22,7 +22,7 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
-        case 0x08: { // LD SP, (NN)
+        case 0x08: { // LD (NN), SP
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
             Memory::Address write_location = word(nn_lsb, nn_msb);
