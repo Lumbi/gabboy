@@ -43,7 +43,6 @@
 		0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB586A29BBB9AE00CA7353 /* gameboy-cpu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameboy-cpu-Bridging-Header.h"; sourceTree = "<group>"; };
 		0DCB586B29BBB9AE00CA7353 /* Memory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		0DCB586C29BBB9AE00CA7353 /* Memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Memory.hpp; sourceTree = "<group>"; };
 		0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gameboy.cpp; sourceTree = "<group>"; };
@@ -131,7 +130,6 @@
 			children = (
 				0DCB586B29BBB9AE00CA7353 /* Memory.cpp */,
 				0DCB586C29BBB9AE00CA7353 /* Memory.hpp */,
-				0DCB586A29BBB9AE00CA7353 /* gameboy-cpu-Bridging-Header.h */,
 				0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */,
 				0DCB586F29BBC18D00CA7353 /* Gameboy.hpp */,
 				0DCB587D29BBE09700CA7353 /* CPU.cpp */,
