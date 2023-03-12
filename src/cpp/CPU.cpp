@@ -121,6 +121,17 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xCD: { // CALL nn
+            Memory::Byte nn_lsb = read(memory, program_counter++);
+            Memory::Byte nn_msb = read(memory, program_counter++);
+            Memory::Address nn = word(nn_lsb, nn_msb);
+            cycle++;
+            write(memory, --stack_pointer, msb(program_counter));
+            write(memory, --stack_pointer, lsb(program_counter));
+            program_counter = nn;
+            break;
+        }
+
         case 0xCB: { // CB-prefixed instructions
             fetch(memory);
             switch (opcode) {

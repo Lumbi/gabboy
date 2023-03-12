@@ -281,6 +281,20 @@
     XCTAssertEqual(gameboy.cpu.cycle, 2);
 }
 
+-(void)test_CALL_nn {
+    Gameboy gameboy;
+    std::array<Byte, 6> program { 0x00, 0x00, 0x00, 0xCD, 0x11, 0x40 }; // extra padding to start PC with offset
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.program_counter = 0x03;
+    gameboy.cpu.stack_pointer = 0xE000;
+    gameboy.run(6);
+    XCTAssertEqual(gameboy.cpu.program_counter, 0x4011);
+    XCTAssertEqual(gameboy.memory.read(0xE000 - 1), 0x00);
+    XCTAssertEqual(gameboy.memory.read(0xE000 - 2), 0x06);
+    XCTAssertEqual(gameboy.cpu.stack_pointer, 0xE000 - 2); // return address takes 2 bytes
+    XCTAssertEqual(gameboy.cpu.cycle, 6);
+}
+
 -(void)test_BIT_7_H__Z1 {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0xCB, 0x7C };
