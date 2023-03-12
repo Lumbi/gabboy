@@ -16,6 +16,11 @@ void CPU::execute(Memory& memory) {
         case 0x00: // NOP
             break;
 
+        case 0x3E: { // LD A, n
+            register_A = read(memory, program_counter++);
+            break;
+        }
+
         case 0x0E: { // LD C, n
             register_C = read(memory, program_counter++);
             break;
