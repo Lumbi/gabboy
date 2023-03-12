@@ -78,6 +78,11 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x77: { // LD (HL), A
+            write(memory, register_HL(), register_A);
+            break;
+        }
+
         case 0x32: { // LD (HL-), A
             write(memory, register_HL(), register_A);
             set_register_HL(register_HL()-1);
