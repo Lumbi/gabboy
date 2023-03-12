@@ -1,6 +1,6 @@
 //
 //  OpcodeTests.m
-//  gameboy-cpuTests
+//  gabboyTests
 //
 //  Created by Gabriel Lumbi on 2023-03-10.
 //

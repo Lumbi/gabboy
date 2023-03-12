@@ -25,13 +25,6 @@
 			remoteGlobalIDString = 0DCB583A29BBB91000CA7353;
 			remoteInfo = "gameboy-cpu";
 		};
-		0DCB585729BBB91100CA7353 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0DCB583329BBB91000CA7353 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0DCB583A29BBB91000CA7353;
-			remoteInfo = "gameboy-cpu";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +35,6 @@
 		0DCB584429BBB91100CA7353 /* gabboy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gabboy.entitlements; sourceTree = "<group>"; };
 		0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gabboyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCB586B29BBB9AE00CA7353 /* Memory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
 		0DCB586C29BBB9AE00CA7353 /* Memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Memory.hpp; sourceTree = "<group>"; };
 		0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gameboy.cpp; sourceTree = "<group>"; };
@@ -67,13 +59,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DCB585329BBB91100CA7353 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,7 +76,6 @@
 			children = (
 				0DCB583B29BBB91000CA7353 /* gabboy.app */,
 				0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */,
-				0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,24 +160,6 @@
 			productReference = 0DCB584C29BBB91100CA7353 /* gabboyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0DCB585529BBB91100CA7353 /* gabboyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyUITests" */;
-			buildPhases = (
-				0DCB585229BBB91100CA7353 /* Sources */,
-				0DCB585329BBB91100CA7353 /* Frameworks */,
-				0DCB585429BBB91100CA7353 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0DCB585829BBB91100CA7353 /* PBXTargetDependency */,
-			);
-			name = gabboyUITests;
-			productName = "gameboy-cpuUITests";
-			productReference = 0DCB585629BBB91100CA7353 /* gabboyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -213,10 +179,6 @@
 						LastSwiftMigration = 1410;
 						TestTargetID = 0DCB583A29BBB91000CA7353;
 					};
-					0DCB585529BBB91100CA7353 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 0DCB583A29BBB91000CA7353;
-					};
 				};
 			};
 			buildConfigurationList = 0DCB583629BBB91000CA7353 /* Build configuration list for PBXProject "gabboy" */;
@@ -234,7 +196,6 @@
 			targets = (
 				0DCB583A29BBB91000CA7353 /* gabboy */,
 				0DCB584B29BBB91100CA7353 /* gabboyTests */,
-				0DCB585529BBB91100CA7353 /* gabboyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,13 +211,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0DCB584A29BBB91100CA7353 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0DCB585429BBB91100CA7353 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,13 +240,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0DCB585229BBB91100CA7353 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -300,11 +247,6 @@
 			isa = PBXTargetDependency;
 			target = 0DCB583A29BBB91000CA7353 /* gabboy */;
 			targetProxy = 0DCB584D29BBB91100CA7353 /* PBXContainerItemProxy */;
-		};
-		0DCB585829BBB91100CA7353 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0DCB583A29BBB91000CA7353 /* gabboy */;
-			targetProxy = 0DCB585729BBB91100CA7353 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -556,50 +498,6 @@
 			};
 			name = Release;
 		};
-		0DCB586729BBB91100CA7353 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VQ5V23TK4V;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "gameboy-cpu";
-			};
-			name = Debug;
-		};
-		0DCB586829BBB91100CA7353 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VQ5V23TK4V;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
-				MACOSX_DEPLOYMENT_TARGET = 12.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "gameboy-cpu";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -626,15 +524,6 @@
 			buildConfigurations = (
 				0DCB586429BBB91100CA7353 /* Debug */,
 				0DCB586529BBB91100CA7353 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0DCB586629BBB91100CA7353 /* Build configuration list for PBXNativeTarget "gabboyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0DCB586729BBB91100CA7353 /* Debug */,
-				0DCB586829BBB91100CA7353 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

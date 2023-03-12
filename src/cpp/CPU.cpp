@@ -1,6 +1,6 @@
 //
 //  CPU.cpp
-//  gameboy-cpu
+//  gabboy
 //
 //  Created by Gabriel Lumbi on 2023-03-10.
 //
