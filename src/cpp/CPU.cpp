@@ -47,7 +47,7 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
-        case 0x21: { // LD LH, nn
+        case 0x21: { // LD HL, nn
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
             set_register_HL(word(nn_lsb, nn_msb));
