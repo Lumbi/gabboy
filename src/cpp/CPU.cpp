@@ -26,6 +26,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x0C: { // INC C
+            register_C++;
+            flag_Z = (register_C & 1) == 0;
+            flag_N = 0;
+            flag_H = (register_C & (1 << 3)) != 0;
+            break;
+        }
+
         case 0xF9: { // LD SP, (HL)
             stack_pointer = register_HL();
             cycle++;
