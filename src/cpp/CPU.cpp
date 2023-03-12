@@ -95,6 +95,13 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xE0: { // LDH (n), A
+            Memory::Byte n = read(memory, program_counter++);
+            Memory::Address address = word(n, 0xFF);
+            write(memory, address, register_A);
+            break;
+        }
+
         case 0x20: { // JP NZ, n
             Memory::Byte n = read(memory, program_counter++);
             if (!flag_Z) { jump(program_counter + int8_t(n)); }

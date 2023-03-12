@@ -191,6 +191,16 @@
     XCTAssertEqual(gameboy.cpu.cycle, 2);
 }
 
+-(void)test_LDH_in_A {
+    Gameboy gameboy;
+    std::array<Byte, 2> program = { 0xE0, 0xAA };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_A = 0xBB;
+    gameboy.run(3);
+    XCTAssertEqual(gameboy.memory.read(0xFFAA), 0xBB);
+    XCTAssertEqual(gameboy.cpu.cycle, 3);
+}
+
 -(void)test_JP_NZ_n__Z0_negative {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x20, 0xFF };
