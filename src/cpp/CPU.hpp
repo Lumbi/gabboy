@@ -35,9 +35,6 @@ public:
     Memory::Byte register_H = 0x00;
     Memory::Byte register_L = 0x00;
 
-    Memory::Word register_HL() const { return register_H << 8 | register_L; }
-    void set_register_HL(Memory::Word data) { register_H = data >> 8; register_L = data & 0xFF; };
-
     Flag flag_Z = 0;
     Flag flag_N = 0;
     Flag flag_H = 0;

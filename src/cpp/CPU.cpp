@@ -44,7 +44,7 @@ void CPU::execute(Memory& memory) {
         }
 
         case 0xF9: { // LD SP, (HL)
-            stack_pointer = register_HL();
+            stack_pointer = word(register_L, register_H);
             cycle++;
             break;
         }
@@ -57,9 +57,8 @@ void CPU::execute(Memory& memory) {
         }
 
         case 0x21: { // LD HL, nn
-            Memory::Byte nn_lsb = read(memory, program_counter++);
-            Memory::Byte nn_msb = read(memory, program_counter++);
-            set_register_HL(word(nn_lsb, nn_msb));
+            register_L = read(memory, program_counter++);
+            register_H = read(memory, program_counter++);
             break;
         }
 
@@ -74,18 +73,21 @@ void CPU::execute(Memory& memory) {
 
         case 0x36: { // LD (HL), n
             Memory::Byte n = read(memory, program_counter++);
-            write(memory, register_HL(), n);
+            write(memory, word(register_L, register_H), n);
             break;
         }
 
         case 0x77: { // LD (HL), A
-            write(memory, register_HL(), register_A);
+            write(memory, word(register_L, register_H), register_A);
             break;
         }
 
         case 0x32: { // LD (HL-), A
-            write(memory, register_HL(), register_A);
-            set_register_HL(register_HL()-1);
+            Memory::Word register_HL = word(register_L, register_H);
+            write(memory, register_HL, register_A);
+            register_HL--;
+            register_H = msb(register_HL);
+            register_L = lsb(register_HL);
             break;
         }
 
