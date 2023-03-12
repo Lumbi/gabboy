@@ -22,6 +22,13 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x31: { // LD SP, NN
+            Memory::Byte nn_lsb = read(memory, program_counter++);
+            Memory::Byte nn_msb = read(memory, program_counter++);
+            stack_pointer = word(nn_lsb, nn_msb);
+            break;
+        }
+
         case 0x08: { // LD (NN), SP
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
