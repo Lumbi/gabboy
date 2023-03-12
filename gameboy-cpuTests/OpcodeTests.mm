@@ -35,7 +35,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 2);
 }
 
--(void)test_LD_SP_NN {
+-(void)test_LD_SP_nn {
     Gameboy gameboy;
     std::array<Byte, 3> program = { 0x31, 0x22, 0xC1 };
     gameboy.memory.load_rom(program);
@@ -44,7 +44,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_LD_HL_NN {
+-(void)test_LD_HL_nn {
     Gameboy gameboy;
     std::array<Byte, 3> program = { 0x21, 0xBB, 0xAA };
     gameboy.memory.load_rom(program);
@@ -53,7 +53,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_LD_NN_SP {
+-(void)test_LD_nn_SP {
     Gameboy gameboy;
     std::array<Byte, 3> program { 0x08, 0x11, 0xFF };
     gameboy.memory.load_rom(program);
@@ -77,7 +77,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 1);
 }
 
--(void)test_LD_HL_N {
+-(void)test_LD_HL_n {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x36, 0xAB };
     gameboy.memory.load_rom(program);

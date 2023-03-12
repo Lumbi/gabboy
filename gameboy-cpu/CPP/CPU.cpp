@@ -22,21 +22,21 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
-        case 0x31: { // LD SP, NN
+        case 0x31: { // LD SP, nn
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
             stack_pointer = word(nn_lsb, nn_msb);
             break;
         }
 
-        case 0x21: { // LD LH, NN
+        case 0x21: { // LD LH, nn
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
             set_register_HL(word(nn_lsb, nn_msb));
             break;
         }
 
-        case 0x08: { // LD (NN), SP
+        case 0x08: { // LD (nn), SP
             Memory::Byte nn_lsb = read(memory, program_counter++);
             Memory::Byte nn_msb = read(memory, program_counter++);
             Memory::Address write_location = word(nn_lsb, nn_msb);
@@ -54,7 +54,7 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
-        case 0x36: { // LD (HL), N
+        case 0x36: { // LD (HL), n
             Memory::Byte n = read(memory, program_counter++);
             write(memory, register_HL(), n);
             break;
