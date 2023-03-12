@@ -11,9 +11,10 @@
 		0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB584029BBB91000CA7353 /* ContentView.swift */; };
 		0DCB584329BBB91100CA7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584229BBB91100CA7353 /* Assets.xcassets */; };
 		0DCB584729BBB91100CA7353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */; };
-		0DCB585129BBB91100CA7353 /* gameboy_cpuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB585029BBB91100CA7353 /* gameboy_cpuTests.swift */; };
-		0DCB585B29BBB91100CA7353 /* gameboy_cpuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB585A29BBB91100CA7353 /* gameboy_cpuUITests.swift */; };
-		0DCB585D29BBB91100CA7353 /* gameboy_cpuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB585C29BBB91100CA7353 /* gameboy_cpuUITestsLaunchTests.swift */; };
+		0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB586B29BBB9AE00CA7353 /* Memory.cpp */; };
+		0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */; };
+		0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB587D29BBE09700CA7353 /* CPU.cpp */; };
+		0DCB588229BC1CDA00CA7353 /* OpcodeTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +42,15 @@
 		0DCB584429BBB91100CA7353 /* gameboy_cpu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gameboy_cpu.entitlements; sourceTree = "<group>"; };
 		0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0DCB584C29BBB91100CA7353 /* gameboy-cpuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gameboy-cpuTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB585029BBB91100CA7353 /* gameboy_cpuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameboy_cpuTests.swift; sourceTree = "<group>"; };
 		0DCB585629BBB91100CA7353 /* gameboy-cpuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "gameboy-cpuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DCB585A29BBB91100CA7353 /* gameboy_cpuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameboy_cpuUITests.swift; sourceTree = "<group>"; };
-		0DCB585C29BBB91100CA7353 /* gameboy_cpuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameboy_cpuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0DCB586A29BBB9AE00CA7353 /* gameboy-cpu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gameboy-cpu-Bridging-Header.h"; sourceTree = "<group>"; };
+		0DCB586B29BBB9AE00CA7353 /* Memory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Memory.cpp; sourceTree = "<group>"; };
+		0DCB586C29BBB9AE00CA7353 /* Memory.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Memory.hpp; sourceTree = "<group>"; };
+		0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Gameboy.cpp; sourceTree = "<group>"; };
+		0DCB586F29BBC18D00CA7353 /* Gameboy.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Gameboy.hpp; sourceTree = "<group>"; };
+		0DCB587D29BBE09700CA7353 /* CPU.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
+		0DCB587E29BBE09700CA7353 /* CPU.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPU.hpp; sourceTree = "<group>"; };
+		0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpcodeTests.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,6 @@
 			children = (
 				0DCB583D29BBB91000CA7353 /* gameboy-cpu */,
 				0DCB584F29BBB91100CA7353 /* gameboy-cpuTests */,
-				0DCB585929BBB91100CA7353 /* gameboy-cpuUITests */,
 				0DCB583C29BBB91000CA7353 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 		0DCB583D29BBB91000CA7353 /* gameboy-cpu */ = {
 			isa = PBXGroup;
 			children = (
+				0DCB586929BBB94A00CA7353 /* CPP */,
 				0DCB583E29BBB91000CA7353 /* gameboy_cpuApp.swift */,
 				0DCB584029BBB91000CA7353 /* ContentView.swift */,
 				0DCB584229BBB91100CA7353 /* Assets.xcassets */,
@@ -115,18 +121,23 @@
 		0DCB584F29BBB91100CA7353 /* gameboy-cpuTests */ = {
 			isa = PBXGroup;
 			children = (
-				0DCB585029BBB91100CA7353 /* gameboy_cpuTests.swift */,
+				0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */,
 			);
 			path = "gameboy-cpuTests";
 			sourceTree = "<group>";
 		};
-		0DCB585929BBB91100CA7353 /* gameboy-cpuUITests */ = {
+		0DCB586929BBB94A00CA7353 /* CPP */ = {
 			isa = PBXGroup;
 			children = (
-				0DCB585A29BBB91100CA7353 /* gameboy_cpuUITests.swift */,
-				0DCB585C29BBB91100CA7353 /* gameboy_cpuUITestsLaunchTests.swift */,
+				0DCB586B29BBB9AE00CA7353 /* Memory.cpp */,
+				0DCB586C29BBB9AE00CA7353 /* Memory.hpp */,
+				0DCB586A29BBB9AE00CA7353 /* gameboy-cpu-Bridging-Header.h */,
+				0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */,
+				0DCB586F29BBC18D00CA7353 /* Gameboy.hpp */,
+				0DCB587D29BBE09700CA7353 /* CPU.cpp */,
+				0DCB587E29BBE09700CA7353 /* CPU.hpp */,
 			);
-			path = "gameboy-cpuUITests";
+			path = CPP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,9 +208,11 @@
 				TargetAttributes = {
 					0DCB583A29BBB91000CA7353 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					0DCB584B29BBB91100CA7353 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 						TestTargetID = 0DCB583A29BBB91000CA7353;
 					};
 					0DCB585529BBB91100CA7353 = {
@@ -259,6 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */,
+				0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */,
+				0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */,
 				0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */,
 				0DCB583F29BBB91000CA7353 /* gameboy_cpuApp.swift in Sources */,
 			);
@@ -268,7 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCB585129BBB91100CA7353 /* gameboy_cpuTests.swift in Sources */,
+				0DCB588229BC1CDA00CA7353 /* OpcodeTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,8 +292,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DCB585D29BBB91100CA7353 /* gameboy_cpuUITestsLaunchTests.swift in Sources */,
-				0DCB585B29BBB91100CA7353 /* gameboy_cpuUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "gameboy-cpu/gameboy_cpu.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -439,6 +454,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpu/CPP/gameboy-cpu-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "gameboy-cpu/gameboy_cpu.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -477,6 +495,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpu/CPP/gameboy-cpu-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,11 +506,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQ5V23TK4V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuTests";
@@ -499,6 +524,8 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpuTests/gameboy-cpuTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gameboy-cpu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gameboy-cpu";
@@ -510,11 +537,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VQ5V23TK4V;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 12.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gabriellumbi.gameboy-cpuTests";
@@ -522,6 +555,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "gameboy-cpuTests/gameboy-cpuTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gameboy-cpu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gameboy-cpu";
