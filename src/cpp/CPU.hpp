@@ -50,6 +50,7 @@ public:
 private:
     Memory::Byte read(Memory&, Memory::Address);
     void write(Memory&, Memory::Address, Memory::Byte);
+    void jump(Memory::Address);
 
 };
 

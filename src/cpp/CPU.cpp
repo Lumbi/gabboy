@@ -66,6 +66,12 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x20: { // JP NZ, n
+            Memory::Byte n = read(memory, program_counter++);
+            if (!flag_Z) { jump(program_counter + int8_t(n)); }
+            break;
+        }
+
         case 0xCB: { // CB-prefixed instructions
             fetch(memory);
             switch (opcode) {
@@ -91,5 +97,11 @@ Memory::Byte CPU::read(Memory& memory, Memory::Address address) {
 
 void CPU::write(Memory& memory, Memory::Address address, Memory::Byte data) {
     memory.write(address, data);
+    cycle++;
+}
+
+void CPU::jump(Memory::Address address)
+{
+    program_counter = address;
     cycle++;
 }
