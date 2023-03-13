@@ -15,6 +15,7 @@
 		0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB586E29BBC18D00CA7353 /* Gameboy.cpp */; };
 		0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB587D29BBE09700CA7353 /* CPU.cpp */; };
 		0DCB588229BC1CDA00CA7353 /* OpcodeTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */; };
+		0DCB588729BEC30100CA7353 /* BootromTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB588629BEC30100CA7353 /* BootromTests.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		0DCB587D29BBE09700CA7353 /* CPU.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPU.cpp; sourceTree = "<group>"; };
 		0DCB587E29BBE09700CA7353 /* CPU.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPU.hpp; sourceTree = "<group>"; };
 		0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpcodeTests.mm; sourceTree = "<group>"; };
+		0DCB588629BEC30100CA7353 /* BootromTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BootromTests.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */,
+				0DCB588629BEC30100CA7353 /* BootromTests.mm */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCB588729BEC30100CA7353 /* BootromTests.mm in Sources */,
 				0DCB588229BC1CDA00CA7353 /* OpcodeTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
