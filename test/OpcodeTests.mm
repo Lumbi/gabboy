@@ -622,7 +622,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_Z_n__Z0 {
+-(void)test_JR_Z_n__Z0 {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x28, 0xFF };
     gameboy.memory.load_rom(program);
@@ -632,7 +632,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 2);
 }
 
--(void)test_JP_Z_n__Z1_negative {
+-(void)test_JR_Z_n__Z1_negative {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x28, 0xFF };
     gameboy.memory.load_rom(program);
@@ -642,7 +642,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_Z_n__Z1_positive {
+-(void)test_JR_Z_n__Z1_positive {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x28, 0x01 };
     gameboy.memory.load_rom(program);
@@ -652,7 +652,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_Z_n__Z1_zero {
+-(void)test_JR_Z_n__Z1_zero {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x28, 0x00 };
     gameboy.memory.load_rom(program);
@@ -662,7 +662,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_NZ_n__Z0_negative {
+-(void)test_JR_NZ_n__Z0_negative {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x20, 0xFF };
     gameboy.memory.load_rom(program);
@@ -672,7 +672,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_NZ_n__Z0_positive {
+-(void)test_JR_NZ_n__Z0_positive {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x20, 0x01 };
     gameboy.memory.load_rom(program);
@@ -682,7 +682,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_NZ_n__Z0_zero {
+-(void)test_JR_NZ_n__Z0_zero {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x20, 0x00 };
     gameboy.memory.load_rom(program);
@@ -692,7 +692,7 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
--(void)test_JP_NZ_n__Z1 {
+-(void)test_JR_NZ_n__Z1 {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x20, 0xAA };
     gameboy.memory.load_rom(program);

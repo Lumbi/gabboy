@@ -221,13 +221,13 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
-        case 0x28: { // JP Z, n
+        case 0x28: { // JR Z, n
             Memory::Byte n = read(memory, program_counter++);
             if (flag_Z) { jump(program_counter + int8_t(n)); }
             break;
         }
 
-        case 0x20: { // JP NZ, n
+        case 0x20: { // JR NZ, n
             Memory::Byte n = read(memory, program_counter++);
             if (!flag_Z) { jump(program_counter + int8_t(n)); }
             break;
