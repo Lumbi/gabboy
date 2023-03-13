@@ -121,6 +121,15 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x22: { // LD (HL+), A
+            Memory::Address register_HL = word(register_L, register_H);
+            write(memory, register_HL, register_A);
+            register_HL++;
+            register_H = msb(register_HL);
+            register_L = lsb(register_HL);
+            break;
+        }
+
         case 0x32: { // LD (HL-), A
             Memory::Word register_HL = word(register_L, register_H);
             write(memory, register_HL, register_A);

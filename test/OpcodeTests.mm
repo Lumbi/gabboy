@@ -275,6 +275,20 @@
     XCTAssertEqual(gameboy.cpu.cycle, 3);
 }
 
+-(void)test_LD_iHLi_A {
+    Gameboy gameboy;
+    std::array<Byte, 1> program { 0x22 };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_A = 0xAB;
+    gameboy.cpu.register_H = 0xC0;
+    gameboy.cpu.register_L = 0x00;
+    gameboy.run(2);
+    XCTAssertEqual(gameboy.memory.read(0xC000), 0xAB);
+    XCTAssertEqual(gameboy.cpu.register_H, 0xC0);
+    XCTAssertEqual(gameboy.cpu.register_L, 0x01);
+    XCTAssertEqual(gameboy.cpu.cycle, 2);
+}
+
 -(void)test_LD_iHLd_A {
     Gameboy gameboy;
     std::array<Byte, 1> program { 0x32 };
