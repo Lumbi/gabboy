@@ -167,6 +167,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xEA: { // LD (nn), A
+            Memory::Byte nn_lsb = read(memory, program_counter++);
+            Memory::Byte nn_msb = read(memory, program_counter++);
+            Memory::Address address = word(nn_lsb, nn_msb);
+            write(memory, address, register_A);
+            break;
+        }
+
         case 0x20: { // JP NZ, n
             Memory::Byte n = read(memory, program_counter++);
             if (!flag_Z) { jump(program_counter + int8_t(n)); }
