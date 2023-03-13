@@ -41,6 +41,11 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x2E: { // LD L, n
+            register_L = read(memory, program_counter++);
+            break;
+        }
+
         case 0x0C: { // INC C
             register_C++;
             flag_Z = register_C == 0;
