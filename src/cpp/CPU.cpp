@@ -56,6 +56,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x04: { // INC B
+            register_B++;
+            flag_Z = register_B == 0;
+            flag_N = 0;
+            flag_H = (register_B & (1 << 3)) != 0;
+            break;
+        }
+
         case 0x0C: { // INC C
             register_C++;
             flag_Z = register_C == 0;
