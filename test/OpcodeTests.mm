@@ -103,9 +103,9 @@
     Gameboy gameboy;
     std::array<Byte, 1> program = { 0x0C };
     gameboy.memory.load_rom(program);
-    gameboy.cpu.register_C = 0x01;
+    gameboy.cpu.register_C = 0xFF;
     gameboy.run(1);
-    XCTAssertEqual(gameboy.cpu.register_C, 0x02);
+    XCTAssertEqual(gameboy.cpu.register_C, 0x00);
     XCTAssertEqual(gameboy.cpu.flag_Z, 1);
     XCTAssertEqual(gameboy.cpu.flag_N, 0);
     XCTAssertEqual(gameboy.cpu.flag_H, 0);
@@ -119,7 +119,7 @@
     gameboy.cpu.register_C = 0x07;
     gameboy.run(1);
     XCTAssertEqual(gameboy.cpu.register_C, 0x08);
-    XCTAssertEqual(gameboy.cpu.flag_Z, 1);
+    XCTAssertEqual(gameboy.cpu.flag_Z, 0);
     XCTAssertEqual(gameboy.cpu.flag_N, 0);
     XCTAssertEqual(gameboy.cpu.flag_H, 1);
     XCTAssertEqual(gameboy.cpu.cycle, 1);
