@@ -197,6 +197,12 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x18: { // JR, n
+            Memory::Byte n = read(memory, program_counter++);
+            jump(program_counter + int8_t(n));
+            break;
+        }
+
         case 0x28: { // JP Z, n
             Memory::Byte n = read(memory, program_counter++);
             if (flag_Z) { jump(program_counter + int8_t(n)); }
