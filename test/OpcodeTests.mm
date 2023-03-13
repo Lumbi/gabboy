@@ -162,6 +162,30 @@
     XCTAssertEqual(gameboy.cpu.cycle, 1);
 }
 
+-(void)test_INC_HL {
+    Gameboy gameboy;
+    std::array<Byte, 1> program = { 0x23 };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_H = 0xC0;
+    gameboy.cpu.register_L = 0xFF;
+    gameboy.run(1);
+    XCTAssertEqual(gameboy.cpu.register_H, 0xC1);
+    XCTAssertEqual(gameboy.cpu.register_L, 0x00);
+    XCTAssertEqual(gameboy.cpu.cycle, 1);
+}
+
+-(void)test_INC_HL_overflow {
+    Gameboy gameboy;
+    std::array<Byte, 1> program = { 0x23 };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_H = 0xFF;
+    gameboy.cpu.register_L = 0xFF;
+    gameboy.run(1);
+    XCTAssertEqual(gameboy.cpu.register_H, 0x00);
+    XCTAssertEqual(gameboy.cpu.register_L, 0x00);
+    XCTAssertEqual(gameboy.cpu.cycle, 1);
+}
+
 -(void)test_CP_n__Z0 {
     Gameboy gameboy;
     std::array<Byte, 2> program = { 0xFE, 0x08 };

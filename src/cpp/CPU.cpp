@@ -57,6 +57,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x23: { // INC HL
+            Memory::Word register_HL = word(register_L, register_H);
+            register_HL++;
+            register_H = msb(register_HL);
+            register_L = lsb(register_HL);
+            break;
+        }
+
         case 0xAF: { // XOR A
             register_A = 0x00;
             flag_Z = 1;
