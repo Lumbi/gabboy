@@ -62,6 +62,15 @@ void CPU::execute(Memory& memory) {
             flag_Z = register_B == 0;
             flag_N = 1;
             flag_H = (register_B & (1 << 3)) != 0;
+            break;
+        }
+
+        case 0x0D: { // DEC C
+            register_C--;
+            flag_Z = register_C == 0;
+            flag_N = 1;
+            flag_H = (register_C & (1 << 3)) != 0;
+            break;
         }
 
         case 0x13: { // INC DE
