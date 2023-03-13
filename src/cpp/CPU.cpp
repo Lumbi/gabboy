@@ -41,6 +41,11 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x57: { // LD D, A
+            register_D = register_A;
+            break;
+        }
+
         case 0x67: { // LD H, A
             register_H = register_A;
             break;
