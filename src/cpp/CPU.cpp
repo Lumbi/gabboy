@@ -61,6 +61,16 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xFE: { // CP n
+            Memory::Byte n = read(memory, program_counter++);
+            Memory::Byte result = register_A - n;
+            flag_Z = result == 0;
+            flag_N = 1;
+            flag_H = (result & (1 << 3)) != 0;
+            flag_C = (result & (1 << 7)) != 0;
+            break;
+        }
+
         case 0xF9: { // LD SP, (HL)
             stack_pointer = word(register_L, register_H);
             cycle++;
