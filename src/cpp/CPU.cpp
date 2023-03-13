@@ -49,6 +49,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x3D: { // DEC A
+            register_A--;
+            flag_Z = register_A == 0;
+            flag_N = 1;
+            flag_H = (register_A & (1 << 3)) != 0;
+            break;
+        }
+
         case 0x05: { // DEC B
             register_B--;
             flag_Z = register_B == 0;
