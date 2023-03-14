@@ -21,6 +21,12 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0xF0: { // LDH A, (n)
+            Memory::Address address = word(read(memory, program_counter++), 0xFF);
+            register_A = read(memory, address);
+            break;
+        }
+
         case 0x7B: { // LD A, E
             register_A = register_E;
             break;
