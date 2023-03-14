@@ -28,11 +28,15 @@ public:
     Byte read(Address) const;
     bool write(Address, Byte);
 
+    void reset();
+
     template<std::size_t N>
     void load_rom(std::array<Byte, N>& program) {
         assert(N < ROM_END);
         std::copy(program.begin(), program.end(), data.get());
     };
+
+    std::array<Byte, 256 * 256> lcd();
 
 private:
     std::unique_ptr<Byte[]> data;

@@ -15,6 +15,8 @@ class Gameboy {
 public:
     void run(CPU::CycleCount cycles = 0);
 
+    void print_lcd();
+
 public:
     CPU cpu;
     Memory memory;

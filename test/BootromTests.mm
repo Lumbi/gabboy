@@ -37,6 +37,7 @@
     };
     gameboy.memory.load_rom(program);
     gameboy.run(1024);
+    gameboy.print_lcd();
 }
 
 @end
