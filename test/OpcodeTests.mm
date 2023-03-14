@@ -83,6 +83,15 @@
     XCTAssertEqual(gameboy.cpu.cycle, 1);
 }
 
+-(void)test_LD_E_n {
+    Gameboy gameboy;
+    std::array<Byte, 2> program = { 0x1E, 0xAB };
+    gameboy.memory.load_rom(program);
+    gameboy.run(2);
+    XCTAssertEqual(gameboy.cpu.register_E, 0xAB);
+    XCTAssertEqual(gameboy.cpu.cycle, 2);
+}
+
 -(void)test_LD_H_A {
     Gameboy gameboy;
     std::array<Byte, 1> program = { 0x67 };

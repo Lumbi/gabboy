@@ -46,6 +46,11 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x1E: { // LD E, n
+            register_E = read(memory, program_counter++);
+            break;
+        }
+
         case 0x67: { // LD H, A
             register_H = register_A;
             break;
