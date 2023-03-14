@@ -128,6 +128,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x90: { // SUB B
+            register_A = register_A - register_B;
+            flag_Z = register_A == 0;
+            flag_N = 1;
+            flag_H = (register_A & (1 << 3)) != 0;
+            flag_C = (register_A & (1 << 7)) != 0;
+        }
+
         case 0x13: { // INC DE
             Memory::Word register_DE = word(register_E, register_D);
             register_DE++;
