@@ -394,6 +394,32 @@
     XCTAssertEqual(gameboy.cpu.cycle, 1);
 }
 
+-(void)test_DEC_E_Z0 {
+    Gameboy gameboy;
+    std::array<Byte, 1> program = { 0x1D };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_E = 0x08;
+    gameboy.run(1);
+    XCTAssertEqual(gameboy.cpu.register_E, 0x07);
+    XCTAssertEqual(gameboy.cpu.flag_Z, 0);
+    XCTAssertEqual(gameboy.cpu.flag_N, 1);
+    XCTAssertEqual(gameboy.cpu.flag_H, 0);
+    XCTAssertEqual(gameboy.cpu.cycle, 1);
+}
+
+-(void)test_DEC_E_Z1 {
+    Gameboy gameboy;
+    std::array<Byte, 1> program = { 0x1D };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.register_E = 0x01;
+    gameboy.run(1);
+    XCTAssertEqual(gameboy.cpu.register_E, 0x00);
+    XCTAssertEqual(gameboy.cpu.flag_Z, 1);
+    XCTAssertEqual(gameboy.cpu.flag_N, 1);
+    XCTAssertEqual(gameboy.cpu.flag_H, 0);
+    XCTAssertEqual(gameboy.cpu.cycle, 1);
+}
+
 -(void)test_INC_DE {
     Gameboy gameboy;
     std::array<Byte, 1> program = { 0x13 };
