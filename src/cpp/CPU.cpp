@@ -120,6 +120,14 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x15: { // DEC D
+            register_D--;
+            flag_Z = register_D == 0;
+            flag_N = 1;
+            flag_H = (register_D & (1 << 3)) != 0;
+            break;
+        }
+
         case 0x1D: { // DEC E
             register_E--;
             flag_Z = register_E == 0;
