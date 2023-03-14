@@ -32,6 +32,11 @@ void CPU::execute(Memory& memory) {
             break;
         }
 
+        case 0x7C: { // LD A, H
+            register_A = register_H;
+            break;
+        }
+
         case 0x1A: { // LD A, (DE)
             register_A = read(memory, word(register_E, register_D));
             break;
