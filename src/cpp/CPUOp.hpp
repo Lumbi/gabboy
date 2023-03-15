@@ -78,6 +78,7 @@ CPU_OP_BINARY(LD_rr_nn);
 CPU_OP_NULLARY(LD_inn_SP);
 CPU_OP_NULLARY(LD_inn_A);
 CPU_OP_BINARY(PUSH_rr);
+CPU_OP_BINARY(POP_rr);
 
 // 16-bit arithmetic instructions
 

@@ -57,6 +57,7 @@ operations {
     { 0x08, new CPUOp::LD_inn_SP() },
     { 0xEA, new CPUOp::LD_inn_A() },
     { 0xC5, new CPUOp::PUSH_rr(register_B, register_C) },
+    { 0xC1, new CPUOp::POP_rr(register_B, register_C) },
 
     // 16-bit arithmetic instructions
 

@@ -193,6 +193,13 @@ bool CPUOp::PUSH_rr::execute(CPU &cpu, Memory &memory) {
     return true;
 }
 
+bool CPUOp::POP_rr::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(3);
+    r2 = memory.read(cpu.stack_pointer++);
+    r1 = memory.read(cpu.stack_pointer++);
+    return true;
+}
+
 // 16-bit arithmetic instructions
 
 bool CPUOp::INC_rr::execute(CPU &cpu, Memory &memory) {
