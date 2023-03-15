@@ -70,6 +70,7 @@ operations {
     { 0x28, new CPUOp::JR_Z_n() },
     { 0x20, new CPUOp::JR_NZ_n() },
     { 0xCD, new CPUOp::CALL_nn() },
+    { 0xC9, new CPUOp::RET() },
 
     // Bit arithmetic instructions (0xCB shortcuts)
 

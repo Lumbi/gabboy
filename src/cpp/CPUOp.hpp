@@ -90,6 +90,7 @@ CPU_OP_NULLARY(JR_n);
 CPU_OP_NULLARY(JR_Z_n);
 CPU_OP_NULLARY(JR_NZ_n);
 CPU_OP_NULLARY(CALL_nn);
+CPU_OP_NULLARY(RET);
 
 // 8-bit shift, rotate, bit instructions
 

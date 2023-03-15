@@ -985,4 +985,16 @@
     XCTAssertEqual(gameboy.cpu.stack_pointer, 0xE000 - 2); // return address takes 2 bytes
 }
 
+-(void)test_RET {
+    Gameboy gameboy;
+    std::array<Byte, 1> program { 0xC9 };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.stack_pointer = 0xE000 - 2;
+    gameboy.memory.write(0xE000 - 1, 0xAB);
+    gameboy.memory.write(0xE000 - 2, 0xCD);
+    gameboy.run(5);
+    XCTAssertEqual(gameboy.cpu.program_counter, 0xABCD + 1);
+    XCTAssertEqual(gameboy.cpu.stack_pointer, 0xE000);
+}
+
 @end

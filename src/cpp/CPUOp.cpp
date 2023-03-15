@@ -255,6 +255,14 @@ bool CPUOp::CALL_nn::execute(CPU &cpu, Memory &memory) {
     return true;
 }
 
+bool CPUOp::RET::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(4);
+    Byte lsb = memory.read(cpu.stack_pointer++);
+    Byte msb = memory.read(cpu.stack_pointer++);
+    cpu.program_counter = word(lsb, msb);
+    return true;
+}
+
 // 8-bit shift, rotate, bit instructions
 
 bool CPUOp::RLA::execute(CPU &cpu, Memory &memory) {
