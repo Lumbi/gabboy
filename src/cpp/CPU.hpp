@@ -52,6 +52,7 @@ public:
 
 private:
     Operations operations;
+    Operations bit_operations;
     CPUOp::Base* current_operation = nullptr;
 
 public:
