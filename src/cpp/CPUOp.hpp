@@ -92,6 +92,7 @@ CPU_OP_NULLARY(CALL_nn);
 
 // 8-bit shift, rotate, bit instructions
 
+CPU_OP_NULLARY(RLA);
 CPU_OP_UNARY(RL_r);
 CPU_OP_BIT(BIT);
 

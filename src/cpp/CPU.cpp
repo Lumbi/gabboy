@@ -68,7 +68,11 @@ operations {
     { 0x18, new CPUOp::JR_n() },
     { 0x28, new CPUOp::JR_Z_n() },
     { 0x20, new CPUOp::JR_NZ_n() },
-    { 0xCD, new CPUOp::CALL_nn() }
+    { 0xCD, new CPUOp::CALL_nn() },
+
+    // Bit arithmetic instructions (0xCB shortcuts)
+
+    { 0x17, new CPUOp::RLA() }
 },
 bit_operations {
     { 0x11, new CPUOp::RL_r(register_C) },
