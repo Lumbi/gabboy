@@ -250,6 +250,18 @@ bool CPUOp::CALL_nn::execute(CPU &cpu, Memory &memory) {
 
 // 8-bit shift, rotate, bit instructions
 
+bool CPUOp::RL_r::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(2);
+    bool carry = r & (1 << 7);
+    Byte result = (r << 1) | cpu.flag_C;
+    r = result;
+    cpu.flag_Z = r == 0;
+    cpu.flag_N = 0;
+    cpu.flag_H = 0;
+    cpu.flag_C = carry;
+    return true;
+}
+
 bool CPUOp::BIT::execute(CPU &cpu, Memory &memory) {
     CYCLE_GUARD(2);
     cpu.flag_Z = (r & (1 << bit)) == 0;

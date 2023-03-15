@@ -71,6 +71,7 @@ operations {
     { 0xCD, new CPUOp::CALL_nn() }
 },
 bit_operations {
+    { 0x11, new CPUOp::RL_r(register_C) },
     { 0x7C, new CPUOp::BIT(7, register_H) }
 }
 {}
