@@ -21,6 +21,7 @@ operations {
     { 0x7C, new CPUOp::LD_r_r(register_A, register_H) },
     { 0x06, new CPUOp::LD_r_n(register_B) },
     { 0x0E, new CPUOp::LD_r_n(register_C) },
+    { 0x4F, new CPUOp::LD_r_r(register_C, register_A) },
     { 0x57, new CPUOp::LD_r_r(register_D, register_A) },
     { 0x1E, new CPUOp::LD_r_n(register_E) },
     { 0x67, new CPUOp::LD_r_r(register_H, register_A) },
