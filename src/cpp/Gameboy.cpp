@@ -7,12 +7,11 @@
 
 #include "Gameboy.hpp"
 
-void Gameboy::run(CPU::CycleCount cycles)
+void Gameboy::run(int cycles)
 {
     bool stop = false;
     while (!stop) {
-        cpu.fetch(memory);
-        cpu.execute(memory);
+        cpu.run_cycle(memory);
         stop = cycles > 0 && cpu.cycle >= cycles;
     }
 }

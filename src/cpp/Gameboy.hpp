@@ -13,7 +13,7 @@
 
 class Gameboy {
 public:
-    void run(CPU::CycleCount cycles = 0);
+    void run(int cycles = 0);
 
     void print_lcd();
 

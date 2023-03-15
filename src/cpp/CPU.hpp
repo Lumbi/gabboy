@@ -8,46 +8,64 @@
 #ifndef CPU_hpp
 #define CPU_hpp
 
+#include "Data.hpp"
 #include "Memory.hpp"
+#include "CPUOp.hpp"
+
+#include <memory>
+#include <unordered_map>
 
 class CPU {
 
 public:
     using Flag = bool;
-    using CycleCount = unsigned int;
+    using Opcode = Byte;
+    using Operations = std::unordered_map<Opcode, CPUOp::Base*>;
+
+public:
+    CPU();
+    ~CPU();
 
 public:
     // Execution
 
-    CycleCount cycle = 0;
-    Memory::Byte opcode = 0x00;
+    int cycle = 0;
+    Opcode opcode = 0x00;
 
     // Registers
 
-    Memory::Address program_counter = 0x0000;
-    Memory::Address stack_pointer = 0xFFFE; // Default SP location
-    Memory::Byte register_A = 0x00;
-    Memory::Byte register_B = 0x00;
-    Memory::Byte register_C = 0x00;
-    Memory::Byte register_D = 0x00;
-    Memory::Byte register_E = 0x00;
-    Memory::Byte register_F = 0x00;
-    Memory::Byte register_H = 0x00;
-    Memory::Byte register_L = 0x00;
+    Address program_counter = 0x0000;
+    Address stack_pointer = 0xFFFE; // Default SP location
+    Byte register_A = 0x00;
+    Byte register_B = 0x00;
+    Byte register_C = 0x00;
+    Byte register_D = 0x00;
+    Byte register_E = 0x00;
+    Byte register_F = 0x00;
+    Byte register_H = 0x00;
+    Byte register_L = 0x00;
 
     Flag flag_Z = 0;
     Flag flag_N = 0;
     Flag flag_H = 0;
     Flag flag_C = 0;
 
+private:
+    Operations operations;
+    CPUOp::Base* current_operation = nullptr;
+
 public:
+    void run_cycle(Memory&);
+
+private:
     void fetch(Memory&);
     void execute(Memory&);
 
 private:
-    Memory::Byte read(Memory&, Memory::Address);
-    void write(Memory&, Memory::Address, Memory::Byte);
-    void jump(Memory::Address);
+    // TODO: Deprecate
+    Byte read(Memory&, Address);
+    void write(Memory&, Address, Byte);
+    void jump(Address);
 
 };
 

@@ -8,19 +8,17 @@
 #ifndef Memory_hpp
 #define Memory_hpp
 
+#include "Data.hpp"
+
 #include <memory>
 #include <array>
 
 class Memory {
 public:
-    using Address = uint16_t;
-    using Byte = uint8_t;
-    using Word = uint16_t;
-
-    static const Memory::Address ROM_BEGIN = 0x0000;
-    static const Memory::Address ROM_END = 0x8000;
-    static const Memory::Address INTERNAL_RAM_BEGIN = 0xC000;
-    static const Memory::Address INTERNAL_RAM_END = 0xE000;
+    static const Address ROM_BEGIN = 0x0000;
+    static const Address ROM_END = 0x8000;
+    static const Address INTERNAL_RAM_BEGIN = 0xC000;
+    static const Address INTERNAL_RAM_END = 0xE000;
 
 public:
     Memory(): data(new Byte[0xFFFF]) {} ;
@@ -41,9 +39,5 @@ public:
 private:
     std::unique_ptr<Byte[]> data;
 };
-
-inline Memory::Byte lsb(Memory::Word word) { return word & 0xFF; }
-inline Memory::Byte msb(Memory::Word word) { return word >> 8; }
-inline Memory::Word word(Memory::Byte lsb, Memory::Byte msb) { return msb << 8 | lsb; };
 
 #endif /* Memory_hpp */

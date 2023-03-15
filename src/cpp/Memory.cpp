@@ -13,7 +13,7 @@ void Memory::reset()
     data[0xFF41] = 0x00; // STAT
 }
 
-Memory::Byte Memory::read(Address address) const
+Byte Memory::read(Address address) const
 {
     return data[address];
 }
@@ -25,13 +25,13 @@ bool Memory::write(Address address, Byte byte)
     return true;
 }
 
-std::array<Memory::Byte, 256 * 256> Memory::lcd()
+std::array<Byte, 256 * 256> Memory::lcd()
 {
     /*
      Resolve the pixel data from the tile maps and tile data and return the pixel buffer.
      */
 
-    std::array<Memory::Byte, 256 * 256> lcd_pixels;
+    std::array<Byte, 256 * 256> lcd_pixels;
 
     /*
      Resolve background:

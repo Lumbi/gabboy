@@ -16,6 +16,8 @@
 		0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB587D29BBE09700CA7353 /* CPU.cpp */; };
 		0DCB588229BC1CDA00CA7353 /* OpcodeTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */; };
 		0DCB588729BEC30100CA7353 /* BootromTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB588629BEC30100CA7353 /* BootromTests.mm */; };
+		0DFF20FA29C09DF9007DB708 /* CPUOp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF20F829C09DF9007DB708 /* CPUOp.cpp */; };
+		0DFF20FD29C0ACAF007DB708 /* Data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF20FB29C0ACAF007DB708 /* Data.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,10 @@
 		0DCB587E29BBE09700CA7353 /* CPU.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPU.hpp; sourceTree = "<group>"; };
 		0DCB588129BC1CDA00CA7353 /* OpcodeTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpcodeTests.mm; sourceTree = "<group>"; };
 		0DCB588629BEC30100CA7353 /* BootromTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BootromTests.mm; sourceTree = "<group>"; };
+		0DFF20F829C09DF9007DB708 /* CPUOp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CPUOp.cpp; sourceTree = "<group>"; };
+		0DFF20F929C09DF9007DB708 /* CPUOp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CPUOp.hpp; sourceTree = "<group>"; };
+		0DFF20FB29C0ACAF007DB708 /* Data.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Data.cpp; sourceTree = "<group>"; };
+		0DFF20FC29C0ACAF007DB708 /* Data.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Data.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,10 @@
 				0DCB586F29BBC18D00CA7353 /* Gameboy.hpp */,
 				0DCB587D29BBE09700CA7353 /* CPU.cpp */,
 				0DCB587E29BBE09700CA7353 /* CPU.hpp */,
+				0DFF20F829C09DF9007DB708 /* CPUOp.cpp */,
+				0DFF20F929C09DF9007DB708 /* CPUOp.hpp */,
+				0DFF20FB29C0ACAF007DB708 /* Data.cpp */,
+				0DFF20FC29C0ACAF007DB708 /* Data.hpp */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
@@ -229,7 +239,9 @@
 			files = (
 				0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */,
 				0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */,
+				0DFF20FD29C0ACAF007DB708 /* Data.cpp in Sources */,
 				0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */,
+				0DFF20FA29C09DF9007DB708 /* CPUOp.cpp in Sources */,
 				0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */,
 				0DCB583F29BBB91000CA7353 /* App.swift in Sources */,
 			);
