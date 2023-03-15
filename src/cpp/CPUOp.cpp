@@ -186,6 +186,13 @@ bool CPUOp::LD_inn_A::execute(CPU &cpu, Memory &memory) {
     return true;
 }
 
+bool CPUOp::PUSH_rr::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(4);
+    memory.write(--cpu.stack_pointer, r1);
+    memory.write(--cpu.stack_pointer, r2);
+    return true;
+}
+
 // 16-bit arithmetic instructions
 
 bool CPUOp::INC_rr::execute(CPU &cpu, Memory &memory) {

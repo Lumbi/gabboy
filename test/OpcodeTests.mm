@@ -750,6 +750,20 @@
     XCTAssertEqual(gameboy.cpu.program_counter, 4);
 }
 
+-(void)test_PUSH_BC {
+    Gameboy gameboy;
+    std::array<Byte, 3> program = { 0xC5 };
+    gameboy.memory.load_rom(program);
+    gameboy.cpu.stack_pointer = 0xE000;
+    gameboy.cpu.register_B = 0xBA;
+    gameboy.cpu.register_C = 0xAB;
+    gameboy.run(5);
+    XCTAssertEqual(gameboy.memory.read(0xE000 - 1), 0xBA);
+    XCTAssertEqual(gameboy.memory.read(0xE000 - 2), 0xAB);
+    XCTAssertEqual(gameboy.cpu.stack_pointer, 0xE000 - 2);
+    XCTAssertEqual(gameboy.cpu.program_counter, 2);
+}
+
 -(void)test_JR_n_positive {
     Gameboy gameboy;
     std::array<Byte, 2> program { 0x18, 0x02 };
