@@ -108,12 +108,18 @@ void CPU::fetch(Memory& memory) {
 
     if (opcode == 0xCB) {
         opcode = memory.read(program_counter++); // NOTE: This shortens bit operations by 1 cycle
+        printf("Executing 0xCB%X...\n", opcode);
         if (auto pair = bit_operations.find(opcode); pair != bit_operations.end()) {
             current_operation = pair->second;
+        } else {
+            printf("Unknown instruction: 0xCB%X\n", opcode);
         }
     } else {
+        printf("Executing 0x%X...\n", opcode);
         if (auto pair = operations.find(opcode); pair != operations.end()) {
             current_operation = pair->second;
+        } else {
+            printf("Unknown instruction: 0x%X\n", opcode);
         }
     }
 }
@@ -121,7 +127,9 @@ void CPU::fetch(Memory& memory) {
 void CPU::execute(Memory& memory) {
     if (current_operation) {
         bool done = current_operation->execute(*this, memory);
-        if (done) { current_operation = nullptr; }
+        if (done) {
+            current_operation = nullptr;
+        }
     }
 }
 
