@@ -46,6 +46,7 @@ operations {
     { 0x0D, new CPUOp::DEC_r(register_C) },
     { 0x15, new CPUOp::DEC_r(register_D) },
     { 0x1D, new CPUOp::DEC_r(register_E) },
+    { 0x86, new CPUOp::ADD_A_iHL() },
     { 0x90, new CPUOp::SUB_r(register_B) },
     { 0xAF, new CPUOp::XOR_r(register_A) },
     { 0xFE, new CPUOp::CP_n() },

@@ -124,6 +124,17 @@ bool CPUOp::XOR_r::execute(CPU &cpu, Memory &memory) {
     return true;
 }
 
+bool CPUOp::ADD_A_iHL::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(2);
+    Byte data = memory.read(word(cpu.register_L, cpu.register_H));
+    cpu.register_A += data;
+    cpu.flag_Z = cpu.register_A == 0;
+    cpu.flag_N = 0;
+    cpu.flag_H = (cpu.register_A & (1 << 3)) != 0;
+    cpu.flag_C = (cpu.register_A & (1 << 7)) != 0;
+    return true;
+}
+
 bool CPUOp::SUB_r::execute(CPU &cpu, Memory &memory) {
     CYCLE_GUARD(1);
     cpu.register_A -= r;
