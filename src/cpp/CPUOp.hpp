@@ -69,6 +69,7 @@ CPU_OP_UNARY(DEC_r);
 CPU_OP_UNARY(XOR_r);
 CPU_OP_UNARY(SUB_r);
 CPU_OP_NULLARY(CP_n);
+CPU_OP_NULLARY(CP_iHL);
 
 // 16-bit load instructions
 

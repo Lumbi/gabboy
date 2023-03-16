@@ -47,6 +47,7 @@ operations {
     { 0x90, new CPUOp::SUB_r(register_B) },
     { 0xAF, new CPUOp::XOR_r(register_A) },
     { 0xFE, new CPUOp::CP_n() },
+    { 0xBE, new CPUOp::CP_iHL() },
 
     // 16-bit load instructions
 

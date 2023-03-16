@@ -145,6 +145,17 @@ bool CPUOp::CP_n::execute(CPU &cpu, Memory &memory) {
     return true;
 }
 
+bool CPUOp::CP_iHL::execute(CPU &cpu, Memory &memory) {
+    CYCLE_GUARD(2);
+    Byte data = memory.read(word(cpu.register_L, cpu.register_H));
+    Byte result = cpu.register_A - data;
+    cpu.flag_Z = result == 0;
+    cpu.flag_N = 1;
+    cpu.flag_H = (result & (1 << 3)) != 0;
+    cpu.flag_C = (result & (1 << 7)) != 0;
+    return true;
+}
+
 // 16-bit load instructions
 
 bool CPUOp::LD_SP_HL::execute(CPU &cpu, Memory &memory) {
