@@ -27,11 +27,10 @@ void Gameboy::print_lcd()
     for (int y = 0; y < size_y; y++) {
         printf("|");
         for (int x = 0; x < size_x; x++) {
+            // TODO: Use 0xFF47 (BGP) for palette
             switch (lcd[x + y * 256]) {
                 case 0: printf(" "); break;
-                case 1: printf("."); break;
-                case 2: printf("0"); break;
-                case 3: printf("#"); break;
+                case 1: case 2: case 3: printf("#"); break;
                 default: assert(false);
             }
         }
