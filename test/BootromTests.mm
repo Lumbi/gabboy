@@ -38,7 +38,8 @@
         0xFE // -2
     };
     gameboy.memory.load_rom(program);
-    gameboy.run(1024);
+
+    gameboy.run(6'000'000);
     gameboy.print_lcd();
 }
 
