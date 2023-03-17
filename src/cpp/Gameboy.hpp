@@ -14,8 +14,14 @@
 class Gameboy {
 public:
     void run(int cycles = 0);
-
     void print_lcd();
+
+    // DEBUG
+
+public:
+    void debug_print_bg_map();
+    void debug_print_tile_data(Address);
+    void debug_print_tile_pixels(Address);
 
 public:
     CPU cpu;

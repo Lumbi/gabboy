@@ -108,14 +108,12 @@ void CPU::fetch(Memory& memory) {
 
     if (opcode == 0xCB) {
         opcode = memory.read(program_counter++); // NOTE: This shortens bit operations by 1 cycle
-        printf("Executing 0xCB%X...\n", opcode);
         if (auto pair = bit_operations.find(opcode); pair != bit_operations.end()) {
             current_operation = pair->second;
         } else {
             printf("Unknown instruction: 0xCB%X\n", opcode);
         }
     } else {
-        printf("Executing 0x%X...\n", opcode);
         if (auto pair = operations.find(opcode); pair != operations.end()) {
             current_operation = pair->second;
         } else {
@@ -132,6 +130,19 @@ void CPU::execute(Memory& memory) {
         }
     }
 }
+
+// DEBUG
+
+void CPU::print_frame()
+{
+    printf("---------------------------------------\n");
+    printf("PC:\t0x%02X\tSP:\t0x%04X\tCY:\t%d\n", program_counter, stack_pointer, cycle);
+    printf("A:\t0x%02X\tB:\t0x%02X\tC:\t0x%02X\tD:\t0x%02X\tE:\t0x%02X\n", register_A, register_B, register_C, register_D, register_E);
+    printf("DE:\t0x%04X\tHL:\t0x%04X\n", word(register_E, register_D), word(register_L, register_H));
+    printf("---------------------------------------\n");
+}
+
+// Deprecate
 
 Byte CPU::read(Memory& memory, Address address) {
     Byte data = memory.read(address);

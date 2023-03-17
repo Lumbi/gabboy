@@ -62,6 +62,11 @@ private:
     void fetch(Memory&);
     void execute(Memory&);
 
+    // DEBUG
+
+public:
+    void print_frame();
+
 private:
     // TODO: Deprecate
     Byte read(Memory&, Address);

@@ -35,6 +35,9 @@ public:
     };
 
     std::array<Byte, 256 * 256> lcd();
+    std::array<Byte, 32 * 32> bg_map();
+    std::array<Byte, 2 * 8> tile_data(Address);
+    std::array<Byte, 8 * 8> tile_pixels(Address);
 
 private:
     std::unique_ptr<Byte[]> data;

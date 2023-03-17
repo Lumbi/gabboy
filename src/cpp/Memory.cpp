@@ -88,3 +88,50 @@ std::array<Byte, 256 * 256> Memory::lcd()
 
     return lcd_pixels;
 }
+
+std::array<Byte, 32 * 32> Memory::bg_map()
+{
+    std::array<Byte, 32 * 32> bg_map;
+
+    const bool bg_tile_map_display_select = (data[0xF40] >> 3) & 1; // LCDC bit 3
+//    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
+    const Address bg_tile_map_start = 0x9800;
+
+    for (int bg_index = 0; bg_index < 32 * 32; bg_index++) {
+        bg_map[bg_index] = data[bg_tile_map_start + bg_index];
+    }
+
+    return bg_map;
+}
+
+std::array<Byte, 2 * 8> Memory::tile_data(Address address) {
+    std::array<Byte, 2 * 8> tile_data;
+    for (int i = 0; i < 16; i++) {
+        tile_data[i] = data[address + i];
+    }
+    return tile_data;
+}
+
+std::array<Byte, 8 * 8> Memory::tile_pixels(Address address)
+{
+    std::array<Byte, 8 * 8> tile_pixels;
+
+    for (int bg_tile_row = 0; bg_tile_row < 8; bg_tile_row++) {
+
+        // Unpack the row
+        const Byte lsb = data[address + (bg_tile_row * 2)];
+        const Byte msb = data[address + (bg_tile_row * 2) + 1];
+
+        // For each bit (8 bits per row)
+        for (int bg_tile_col = 0; bg_tile_col < 8; bg_tile_col++) {
+            // Get the two-bits pixel color
+            const int shift = 7 - bg_tile_col;
+            const uint8_t low_bit = (lsb >> shift) & 1;
+            const uint8_t high_bit = (msb >> shift) & 2;
+            const Byte pixel = low_bit | high_bit;
+            tile_pixels[bg_tile_col + bg_tile_row * 8] = pixel;
+        }
+    }
+
+    return tile_pixels;
+}

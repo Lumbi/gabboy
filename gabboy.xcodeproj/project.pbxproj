@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D870E8029C3A3C2009B6B0F /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D870E7E29C3A3C2009B6B0F /* Debug.cpp */; };
 		0DCB583F29BBB91000CA7353 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB583E29BBB91000CA7353 /* App.swift */; };
 		0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB584029BBB91000CA7353 /* ContentView.swift */; };
 		0DCB584329BBB91100CA7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584229BBB91100CA7353 /* Assets.xcassets */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D870E7E29C3A3C2009B6B0F /* Debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Debug.cpp; sourceTree = "<group>"; };
+		0D870E7F29C3A3C2009B6B0F /* Debug.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Debug.hpp; sourceTree = "<group>"; };
 		0DCB583B29BBB91000CA7353 /* gabboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gabboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCB583E29BBB91000CA7353 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		0DCB584029BBB91000CA7353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 				0DFF20F929C09DF9007DB708 /* CPUOp.hpp */,
 				0DFF20FB29C0ACAF007DB708 /* Data.cpp */,
 				0DFF20FC29C0ACAF007DB708 /* Data.hpp */,
+				0D870E7E29C3A3C2009B6B0F /* Debug.cpp */,
+				0D870E7F29C3A3C2009B6B0F /* Debug.hpp */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */,
+				0D870E8029C3A3C2009B6B0F /* Debug.cpp in Sources */,
 				0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */,
 				0DFF20FD29C0ACAF007DB708 /* Data.cpp in Sources */,
 				0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */,

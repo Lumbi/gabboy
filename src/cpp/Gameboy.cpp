@@ -7,6 +7,8 @@
 
 #include "Gameboy.hpp"
 
+#include "Debug.hpp"
+
 void Gameboy::run(int cycles)
 {
     bool stop = false;
@@ -19,14 +21,12 @@ void Gameboy::run(int cycles)
 void Gameboy::print_lcd()
 {
     auto lcd = memory.lcd();
-    const int size = 128;
-    const int subsample = 256 / size;
-    printf(" "); for (int i = 0; i < size; i++) { printf("-"); } printf("\n");
-    for (int y = 0; y < size; y++) {
-        if (y % subsample != 0) { continue; }
+    const int size_x = 160;
+    const int size_y = 144;
+    printf(" "); for (int i = 0; i < size_x; i++) { printf("-"); } printf("\n");
+    for (int y = 0; y < size_y; y++) {
         printf("|");
-        for (int x = 0; x < size; x++) {
-            if (y % subsample != 0) { continue; }
+        for (int x = 0; x < size_x; x++) {
             switch (lcd[x + y * 256]) {
                 case 0: printf(" "); break;
                 case 1: printf("."); break;
@@ -37,5 +37,25 @@ void Gameboy::print_lcd()
         }
         printf("|\n");
     }
-    printf(" "); for (int i = 0; i < size; i++) { printf("-"); } printf("\n");
+    printf(" "); for (int i = 0; i < size_x; i++) { printf("-"); } printf("\n");
+}
+
+// DEBUG
+
+void Gameboy::debug_print_bg_map()
+{
+    auto bg_map = memory.bg_map();
+    debug_print_buffer_2D<32, 32>(bg_map);
+}
+
+void Gameboy::debug_print_tile_data(Address address)
+{
+    auto tile_data = memory.tile_data(address);
+    debug_print_buffer_2D<2, 8>(tile_data);
+}
+
+void Gameboy::debug_print_tile_pixels(Address address)
+{
+    auto tile = memory.tile_pixels(address);
+    debug_print_buffer_2D<8, 8>(tile);
 }
