@@ -45,7 +45,8 @@ std::array<Byte, 256 * 256> Memory::lcd()
 
     // Switch between the two BG tile maps
     const bool bg_tile_map_display_select = (data[0xF40] >> 3) & 1; // LCDC bit 3
-    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
+//    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
+    const Address bg_tile_map_start = 0x9800;
 
     // For each tile index in the background map
     for (int bg_index = 0; bg_index < 32 * 32; bg_index++) {
@@ -53,9 +54,8 @@ std::array<Byte, 256 * 256> Memory::lcd()
         // Select the tile map addressing mode
         const bool bg_tile_data_select = (data[0xF40] >> 4 & 1); // LCDC bit 4
         const Address bg_tile_data_start = bg_tile_data_select ? 0x8000 : 0x8800;
-        const Byte bg_tile_data_offset = bg_tile_data_select
-        ? uint8_t(data[bg_tile_map_start + bg_index])
-        : int8_t(data[bg_tile_map_start + bg_index]);
+        const Address bg_tile_data_address = bg_tile_map_start + bg_index;
+        const Byte bg_tile_data_offset = bg_tile_data_select ? uint8_t(data[bg_tile_data_address]) : int8_t(data[bg_tile_data_address]);
 
         // Get the tile address
         const Address bg_tile_address = bg_tile_data_start + bg_tile_data_offset;

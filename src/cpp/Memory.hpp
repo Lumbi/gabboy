@@ -21,7 +21,7 @@ public:
     static const Address INTERNAL_RAM_END = 0xE000;
 
 public:
-    Memory(): data(new Byte[0xFFFF]) {} ;
+    Memory(): data(new Byte[0xFFFF]) { reset(); };
 
     Byte read(Address) const;
     bool write(Address, Byte);
