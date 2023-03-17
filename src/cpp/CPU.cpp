@@ -99,6 +99,20 @@ void CPU::run_cycle(Memory& memory)
     execute(memory);
     fetch(memory);
     cycle++;
+
+    // Update LCDC Y-coordinate (LY) every 114 cycles, why 114? Because,
+    // - VBlank lasts 4560 clock cycles
+    // - VBlank is 10 scanlines wide
+    // - So 1 scanline update takes 456 clock cycles
+    // - And 1 clock cycle takes 4 machine cycles
+    // - Therefore, 1 scanline takes 114 machine cycles
+    if (cycle % 114 == 0) {
+        Byte LY = memory.read(0xFF44);
+        // LY can take values between 0 and 153
+        // - [0 ~ 143] are displayed on the LCD
+        // - [144 ~ 153] is VBlank
+        memory.write(0xFF44, (LY + 1) % 154);
+    }
 }
 
 void CPU::fetch(Memory& memory) {
