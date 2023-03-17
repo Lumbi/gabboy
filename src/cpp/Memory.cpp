@@ -71,7 +71,7 @@ std::array<Byte, 256 * 256> Memory::lcd()
             for (int bg_tile_col = 0; bg_tile_col < 8; bg_tile_col++) {
 
                 // Get the two-bits pixel color
-                const int shift = 7 - bg_tile_row;
+                const int shift = 7 - bg_tile_col;
                 const uint8_t low_bit = (lsb >> shift) & 1;
                 const uint8_t high_bit = (msb >> shift) & 2;
                 const Byte pixel = low_bit | high_bit;
