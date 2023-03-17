@@ -155,22 +155,3 @@ void CPU::print_frame()
     printf("DE:\t0x%04X\tHL:\t0x%04X\n", word(register_E, register_D), word(register_L, register_H));
     printf("---------------------------------------\n");
 }
-
-// Deprecate
-
-Byte CPU::read(Memory& memory, Address address) {
-    Byte data = memory.read(address);
-    cycle++;
-    return data;
-}
-
-void CPU::write(Memory& memory, Address address, Byte data) {
-    memory.write(address, data);
-    cycle++;
-}
-
-void CPU::jump(Address address)
-{
-    program_counter = address;
-    cycle++;
-}

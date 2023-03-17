@@ -67,12 +67,6 @@ private:
 public:
     void print_frame();
 
-private:
-    // TODO: Deprecate
-    Byte read(Memory&, Address);
-    void write(Memory&, Address, Byte);
-    void jump(Address);
-
 };
 
 #endif /* CPU_hpp */
