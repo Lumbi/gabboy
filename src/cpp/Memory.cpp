@@ -63,10 +63,10 @@ std::array<Byte, 256 * 256> Memory::lcd()
         const bool bg_tile_data_select = (data[0xF40] >> 4 & 1); // LCDC bit 4
         const Address bg_tile_data_start = bg_tile_data_select ? 0x8000 : 0x8800;
         const Address bg_tile_data_address = bg_tile_map_start + bg_index;
-        const Byte bg_tile_data_offset = bg_tile_data_select ? uint8_t(data[bg_tile_data_address]) : int8_t(data[bg_tile_data_address]);
+        const Byte bg_tile_index = bg_tile_data_select ? uint8_t(data[bg_tile_data_address]) : int8_t(data[bg_tile_data_address]);
 
         // Get the tile address
-        const Address bg_tile_address = bg_tile_data_start + bg_tile_data_offset;
+        const Address bg_tile_address = bg_tile_data_start + bg_tile_index * 16; // 16 bytes per tile
 
         // For each row in the tile data (2 bytes per row)
         for (int bg_tile_row = 0; bg_tile_row < 8; bg_tile_row++) {
