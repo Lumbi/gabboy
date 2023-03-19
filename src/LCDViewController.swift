@@ -28,9 +28,19 @@ class LCDViewController: NSViewController {
 
         bridge.load()
 
-        lcdTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { [weak self] _ in
-            self?.bridge.frame()
+        lcdTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 30.0, repeats: true) { [weak self] _ in
             self?.screen?.redraw()
+        }
+
+        // Dangerous multi-threading!
+        // Not the end of the world but the LCD data is written in a background thread and read from the main thread
+        // so there's the main thread could be reading LCD data while the emulator is writing to it.
+        // TODO: Refactor LCD to update LCD data during VBlank
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            while (true) {
+                self?.bridge.frame()
+                Thread.sleep(forTimeInterval: 1.0 / 60.0)
+            }
         }
 
         lcdTimer?.fire()
