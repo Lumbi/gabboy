@@ -11,6 +11,8 @@ void Memory::reset()
 {
     data[0xFF40] = 0x91; // LCDC
     data[0xFF41] = 0x00; // STAT
+    data[0xFF42] = 0x00; // SCY
+    data[0xFF43] = 0x00; // SCX
 
     // TODO: Move to load_cartrige();
     std::array<Byte, 3 * 16> nintendo_logo = {
@@ -40,6 +42,9 @@ std::array<Byte, 256 * 256> Memory::lcd()
      */
 
     std::array<Byte, 256 * 256> lcd_pixels;
+
+    const Byte scroll_y = data[0xFF42];
+    const Byte scroll_x = data[0xFF43];
 
     /*
      Resolve background:
@@ -84,8 +89,8 @@ std::array<Byte, 256 * 256> Memory::lcd()
                 const Byte pixel = low_bit | high_bit;
 
                 // Assign the pixel color back to the pixel buffer
-                const int x = (bg_index % 32) * 8 + bg_tile_col;
-                const int y = (bg_index / 32) * 8 + bg_tile_row;
+                const int x = ((bg_index % 32) * 8 + bg_tile_col - scroll_x + 256) % 256 ;
+                const int y = ((bg_index / 32) * 8 + bg_tile_row - scroll_y + 256) % 256;
                 lcd_pixels[x + y * 256] = pixel;
             }
         }
