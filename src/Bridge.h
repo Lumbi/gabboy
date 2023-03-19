@@ -8,5 +8,20 @@
 #ifndef Bridge_h
 #define Bridge_h
 
+#ifdef __OBJC__
+
+#import <Foundation/Foundation.h>
+
+@interface Bridge : NSObject
+
+- (void) load;
+
+- (void) frame;
+
+- (unsigned char *) lcd;
+
+@end
+
+#endif
 
 #endif /* Bridge_h */
