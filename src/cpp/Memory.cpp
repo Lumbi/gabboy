@@ -52,15 +52,14 @@ std::array<Byte, 256 * 256> Memory::lcd()
      */
 
     // Switch between the two BG tile maps
-    const bool bg_tile_map_display_select = (data[0xF40] >> 3) & 1; // LCDC bit 3
-//    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
-    const Address bg_tile_map_start = 0x9800;
+    const bool bg_tile_map_display_select = (data[0xFF40] >> 3) & 1; // LCDC bit 3
+    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
 
     // For each tile index in the background map
     for (int bg_index = 0; bg_index < 32 * 32; bg_index++) {
 
         // Select the tile map addressing mode
-        const bool bg_tile_data_select = (data[0xF40] >> 4 & 1); // LCDC bit 4
+        const bool bg_tile_data_select = (data[0xFF40] >> 4 & 1); // LCDC bit 4
         const Address bg_tile_data_start = bg_tile_data_select ? 0x8000 : 0x8800;
         const Address bg_tile_data_address = bg_tile_map_start + bg_index;
         const Byte bg_tile_index = bg_tile_data_select ? uint8_t(data[bg_tile_data_address]) : int8_t(data[bg_tile_data_address]);
@@ -101,9 +100,8 @@ std::array<Byte, 32 * 32> Memory::bg_map()
 {
     std::array<Byte, 32 * 32> bg_map;
 
-    const bool bg_tile_map_display_select = (data[0xF40] >> 3) & 1; // LCDC bit 3
-//    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
-    const Address bg_tile_map_start = 0x9800;
+    const bool bg_tile_map_display_select = (data[0xFF40] >> 3) & 1; // LCDC bit 3
+    const Address bg_tile_map_start = bg_tile_map_display_select ? 0x9C00 : 0x9800;
 
     for (int bg_index = 0; bg_index < 32 * 32; bg_index++) {
         bg_map[bg_index] = data[bg_tile_map_start + bg_index];
