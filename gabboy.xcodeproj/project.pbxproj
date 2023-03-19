@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0D870E8029C3A3C2009B6B0F /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D870E7E29C3A3C2009B6B0F /* Debug.cpp */; };
+		0D870E8629C553AE009B6B0F /* Bridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0D870E8529C553AE009B6B0F /* Bridge.mm */; };
+		0D870E8C29C5633F009B6B0F /* LCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D870E8B29C5633F009B6B0F /* LCDViewController.swift */; };
 		0DCB583F29BBB91000CA7353 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB583E29BBB91000CA7353 /* App.swift */; };
-		0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB584029BBB91000CA7353 /* ContentView.swift */; };
 		0DCB584329BBB91100CA7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584229BBB91100CA7353 /* Assets.xcassets */; };
 		0DCB584729BBB91100CA7353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */; };
 		0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB586B29BBB9AE00CA7353 /* Memory.cpp */; };
@@ -34,9 +35,11 @@
 /* Begin PBXFileReference section */
 		0D870E7E29C3A3C2009B6B0F /* Debug.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Debug.cpp; sourceTree = "<group>"; };
 		0D870E7F29C3A3C2009B6B0F /* Debug.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Debug.hpp; sourceTree = "<group>"; };
+		0D870E8129C55149009B6B0F /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		0D870E8529C553AE009B6B0F /* Bridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Bridge.mm; sourceTree = "<group>"; };
+		0D870E8B29C5633F009B6B0F /* LCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LCDViewController.swift; sourceTree = "<group>"; };
 		0DCB583B29BBB91000CA7353 /* gabboy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gabboy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCB583E29BBB91000CA7353 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		0DCB584029BBB91000CA7353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0DCB584229BBB91100CA7353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DCB584429BBB91100CA7353 /* gabboy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gabboy.entitlements; sourceTree = "<group>"; };
 		0DCB584629BBB91100CA7353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -94,9 +97,11 @@
 		0DCB583D29BBB91000CA7353 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				0D870E8129C55149009B6B0F /* Bridge.h */,
+				0D870E8529C553AE009B6B0F /* Bridge.mm */,
 				0DCB586929BBB94A00CA7353 /* cpp */,
 				0DCB583E29BBB91000CA7353 /* App.swift */,
-				0DCB584029BBB91000CA7353 /* ContentView.swift */,
+				0D870E8B29C5633F009B6B0F /* LCDViewController.swift */,
 				0DCB584229BBB91100CA7353 /* Assets.xcassets */,
 				0DCB584429BBB91100CA7353 /* gabboy.entitlements */,
 				0DCB584529BBB91100CA7353 /* Preview Content */,
@@ -243,12 +248,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DCB587F29BBE09700CA7353 /* CPU.cpp in Sources */,
+				0D870E8629C553AE009B6B0F /* Bridge.mm in Sources */,
 				0D870E8029C3A3C2009B6B0F /* Debug.cpp in Sources */,
 				0DCB587029BBC18D00CA7353 /* Gameboy.cpp in Sources */,
 				0DFF20FD29C0ACAF007DB708 /* Data.cpp in Sources */,
+				0D870E8C29C5633F009B6B0F /* LCDViewController.swift in Sources */,
 				0DCB586D29BBB9AE00CA7353 /* Memory.cpp in Sources */,
 				0DFF20FA29C09DF9007DB708 /* CPUOp.cpp in Sources */,
-				0DCB584129BBB91000CA7353 /* ContentView.swift in Sources */,
 				0DCB583F29BBB91000CA7353 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +422,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/src/Bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,6 +463,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/src/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
