@@ -12,9 +12,11 @@
 void Gameboy::run(int cycles)
 {
     bool stop = false;
+    int executed_cycles = 0;
     while (!stop) {
         cpu.run_cycle(memory);
-        stop = cycles > 0 && cpu.cycle >= cycles;
+        executed_cycles++;
+        stop = cycles > 0 && executed_cycles >= cycles;
     }
 }
 
