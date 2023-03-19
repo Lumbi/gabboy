@@ -11,7 +11,11 @@ import SwiftUI
 struct GabboyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                LCDView()
+            }
+            .frame(width: 160, height: 144)
+            .fixedSize()
         }
     }
 }
