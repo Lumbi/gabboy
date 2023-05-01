@@ -1,6 +1,6 @@
 # gabboy
 
-A very basic Gameboy emulator for MacOS. Currently it can only run a specific version of the bootrom (DMG) and display LCD data (no sound).
+A very basic Game Boy emulator for MacOS. Currently it can only run a specific version of the bootrom (DMG) and display LCD data (no sound).
 
 For educational purposes only! Not for commercial use. (Not that it could ever be).
 
@@ -12,7 +12,7 @@ I'm mostly experienced with high-level programming but I've always been interest
 
 A few years ago, I [tried out](https://github.com/Lumbi/nand2tetris) the [From Nand to Tetris](https://www.nand2tetris.org/) course which really helped me understand how computers fundamentally work. I highly recommend it.
 
-Fast-forward to now, while getting my hands dirty with C++ and optimization, my interest for low-level programming sparked again. With a bit of confidence and determination, I decided to take up the challenge and see how far I could go in implementing a Gameboy emulator.
+Fast-forward to now, while getting my hands dirty with C++ and optimization, my interest for low-level programming sparked again. With a bit of confidence and determination, I decided to take up the challenge and see how far I could go in implementing a Game Boy emulator.
 
 ## How
 
